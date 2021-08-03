@@ -45,7 +45,7 @@
 		data: function () {
 			return {
 				help: {
-					onTap: function() { alert('open help screen') }
+					onTap: function(){apretaste.send({command:'BAREBONE REGLAS'})}
 				},
 				title: {
 					text: 'Inicio'

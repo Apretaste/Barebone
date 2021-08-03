@@ -16,7 +16,6 @@
 				{caption:'Social', active:this.active=='Social', onTap:function(){apretaste.send({command:'BAREBONE SOCIAL'})}},
 				{caption:'Forms', active:this.active=='Forms', onTap:function(){apretaste.send({command:'BAREBONE FORMS'})}},
 				{caption:'Chat', active:this.active=='Chat', onTap:function(){apretaste.send({command:'BAREBONE CHAT'})}},
-				{caption:'Reglas', active:this.active=='Reglas', onTap:function(){apretaste.send({command:'BAREBONE REGLAS'})}},
 			];
 		}
 	}
