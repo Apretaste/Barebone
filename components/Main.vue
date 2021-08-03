@@ -4,7 +4,7 @@
  		<tabs class="tutorial-tabs" active="Inicio"></tabs>
 
 		<!-- help -->
-		<ap-help :data="help"></ap-help>
+		<ap-help :data="getHelpData"></ap-help>
 
 		<!-- title -->
 		<ap-title :data="title"></ap-title>
@@ -42,11 +42,8 @@
 		components: {
 			'Tabs': httpVueLoader(apretaste.servicePath + '/components/Tabs.vue')
 		},
-		data: function () {
+		data: function() {
 			return {
-				help: {
-					onTap: function(){apretaste.send({command:'BAREBONE REGLAS'})}
-				},
 				title: {
 					text: 'Inicio'
 				},
@@ -98,7 +95,7 @@
 				],
 			};
 		},
-		mounted: function () {
+		mounted: function() {
 			// start the tutorial
 			if(apretaste.request.tutorial) {
 				startTutorial([
@@ -115,6 +112,13 @@
 			},
 			openDrawer() {
 				this.$refs.drawer.show();
+			}
+		},
+		computed: {
+			getHelpData: function() {
+				return {
+					onTap: function(){ apretaste.send({command:'BAREBONE REGLAS'}) }
+				}
 			}
 		}
 	}
