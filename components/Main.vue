@@ -22,12 +22,12 @@
 
 		<!-- chips -->
 		<div class="mb-3">
-			<ap-chip v-for="dt in chips" :data="dt" class="me-2"></ap-chip>
+			<ap-chip v-for="dt in chips" :key="Math.random()" :data="dt" class="me-2"></ap-chip>
 		</div>
 
 		<!-- drawer -->
-		<a id="drawerTrigger" href="#!">Abrir Drawer</a>
-		<ap-drawer :data="drawer"></ap-drawer>
+		<a @click.stop="openDrawer()" href="#!">Abrir Drawer</a>
+		<ap-drawer ref="drawer" :data="drawer"></ap-drawer>
 
 		<!-- floating action button -->
 		<ap-fab class="tutorial-fab" :data="fab"></ap-fab>
@@ -44,7 +44,7 @@
 				title: {text: 'Inicio'},
 				text: {text: 'Bienvenido a los barebones @' + apretaste.request.username + '. Usa este servicio para guiar tus interfaces gráficas y #BuenasPracticas de programación a la ahora de escribir un servicio para https://www.apretaste.org, y si tienes dudas escríbeme a salvi@apretaste.org.'},
 				avatarInternet: {
-					picture: apretaste.servicePath + '/images/salvipascual.jpg',
+					picture: apretaste.servicePath + 'images/salvipascual.jpg',
 					color: 'rojo',
 					size: 50,
 					online: true,
@@ -62,7 +62,6 @@
 					size: 'small'
 				},
 				drawer: {
-					triggerId: 'drawerTrigger',
 					title: 'Ver opciones',
 					options: [
 						{icon:'fas fa-check', caption:'Aceptar', onTap:this.fireExampleEvent},
@@ -103,6 +102,9 @@
 		methods: {
 			fireExampleEvent() {
 				console.log("Fire Example Event (FEE)");
+			},
+			openDrawer() {
+				this.$refs.drawer.show();
 			}
 		}
 	}

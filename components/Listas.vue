@@ -55,6 +55,10 @@
 					actions: [
 						{icon:'fas fa-play', caption:'Iniciar audio', onTap:this.fireExampleEvent},
 						{icon:'fas fa-trash', caption:'Eliminar', onTap:this.fireExampleEvent}
+					],
+					chips: [
+						{icon:'fas fa-play', text:'Iniciar audio'},
+						{icon:'fas fa-trash', text:'Eliminar'}
 					]
 				}],
 				people: [{
@@ -66,17 +70,17 @@
 				},{
 					username: 'refageist',
 					gender: 'M',
-					avatar: {face:'hombre', color:'amarillo', online:true, influencer:true},
+					avatar: {letter:'hombre', color:'amarillo', online:true, influencer:true},
 					chips: [
-						{icon:'fas fa-bolt', text:'45,678', clear:true},
-						{icon:'fas fa-users', text:'123', clear:true}
+						{icon:'fas fa-bolt', text:'45,678'},
+						{icon:'fas fa-users', text:'123'}
 					],
 					actions:[{icon:'fas fa-user', caption:'Visitar perfil', onTap:this.fireExampleEvent}]
 				},{
 					username: 'juanita',
 					gender: 'F',
 					text: 'Trabajadora social',
-					avatar: {face:'chica', color:'rojo', online:false, influencer:false},
+					avatar: {letter:'chica', color:'rojo', online:false, influencer:false},
 					actions: [
 						{icon:'fas fa-user', caption:'Visitar perfil', onTap:this.fireExampleEvent},
 						{icon:'fas fa-trash', caption:'Eliminar', onTap:this.fireExampleEvent}
